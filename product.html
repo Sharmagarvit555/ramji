@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemstone Detail — RAMJI Gems</title>
+  <meta name="description" content="View detailed information, specifications, and reviews for this exceptional certified gemstone." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="shop.html" class="nav-icon-btn" aria-label="Search"><i class="fas fa-search"></i></a>
+      <a href="shop.html" class="nav-icon-btn" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <a href="cart.html" class="nav-icon-btn cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn" aria-label="Account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html"><i class="fas fa-shopping-bag"></i> Cart</a>
+  <a href="login.html"><i class="fas fa-user"></i> Account</a>
+</nav>
+
+<!-- Product Detail -->
+<section class="product-detail-section" id="product-detail-section">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" style="justify-content:flex-start;margin-bottom:36px" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="shop.html">Shop</a>
+      <i class="fas fa-chevron-right"></i>
+      <span id="product-name-breadcrumb">Loading...</span>
+    </nav>
+
+    <div class="product-detail-grid">
+      <!-- Gallery -->
+      <div class="product-gallery" data-aos="fade-right">
+        <div class="main-image-box" id="main-image-box">
+          <div class="main-gem" id="main-gem-shape"></div>
+        </div>
+        <div class="thumbnails-row" id="thumbnails-row"></div>
+      </div>
+
+      <!-- Info -->
+      <div class="product-detail-info" data-aos="fade-left">
+        <div class="product-category-label" id="product-category-label"></div>
+        <h1 id="product-name">Loading...</h1>
+        <div class="product-detail-pricing">
+          <span class="detail-price" id="product-price"></span>
+          <span class="detail-orig-price" id="product-orig-price"></span>
+          <span class="detail-badge" id="product-badge" style="display:none"></span>
+        </div>
+        <div class="product-rating-row" id="product-rating-stars"></div>
+        <p class="product-detail-desc" id="product-desc"></p>
+
+        <div class="specs-grid">
+          <div class="spec-box"><div class="label">Carat Weight</div><div class="value" id="product-carat"></div></div>
+          <div class="spec-box"><div class="label">Cut Style</div><div class="value" id="product-cut"></div></div>
+          <div class="spec-box"><div class="label">Color</div><div class="value" id="product-color"></div></div>
+          <div class="spec-box"><div class="label">Origin</div><div class="value" id="product-origin"></div></div>
+        </div>
+
+        <div class="qty-row">
+          <span class="qty-label">Quantity</span>
+          <div class="qty-selector" role="group" aria-label="Quantity selector">
+            <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity"><i class="fas fa-minus"></i></button>
+            <input type="number" class="qty-input" id="qty-input" value="1" min="1" max="10" aria-label="Quantity" />
+            <button class="qty-btn" id="qty-plus" aria-label="Increase quantity"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+
+        <div class="detail-btns">
+          <button class="btn btn-primary" id="btn-add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          <button class="btn-wishlist" id="btn-wishlist"><i class="far fa-heart"></i> Add to Wishlist</button>
+        </div>
+
+        <div class="certif-badge" id="cert-badge-wrap">
+          <i class="fas fa-certificate"></i>
+          <span id="cert-badge"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tabs Section -->
+<section class="tabs-section">
+  <div class="container">
+    <nav class="tabs-nav" role="tablist" aria-label="Product information tabs">
+      <button class="tab-btn active" data-tab="description" role="tab" aria-selected="true">Description</button>
+      <button class="tab-btn" data-tab="specifications" role="tab" aria-selected="false">Specifications</button>
+      <button class="tab-btn" data-tab="reviews" role="tab" aria-selected="false">Reviews <span id="reviews-count"></span></button>
+    </nav>
+
+    <div id="tab-description" class="tab-pane active" role="tabpanel">
+      <div style="max-width:760px">
+        <h3 style="font-family:var(--font-heading);margin-bottom:16px;font-size:1.4rem">About This Gemstone</h3>
+        <p style="color:var(--text-muted);line-height:1.9" id="tab-desc-text"></p>
+        <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+          <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:0.88rem">
+            <i class="fas fa-shield-alt" style="color:var(--gold)"></i> Certified Authentic
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:0.88rem">
+            <i class="fas fa-leaf" style="color:var(--gold)"></i> Ethically Sourced
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:0.88rem">
+            <i class="fas fa-box" style="color:var(--gold)"></i> Luxury Packaging
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:0.88rem">
+            <i class="fas fa-undo" style="color:var(--gold)"></i> 30-Day Returns
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-specifications" class="tab-pane" role="tabpanel">
+      <div style="max-width:600px">
+        <table class="specs-table">
+          <tbody>
+            <tr><td>Stone Name</td><td id="spec-name"></td></tr>
+            <tr><td>Category</td><td id="spec-category"></td></tr>
+            <tr><td>Carat Weight</td><td id="spec-carat"></td></tr>
+            <tr><td>Cut Style</td><td id="spec-cut"></td></tr>
+            <tr><td>Color</td><td id="spec-color"></td></tr>
+            <tr><td>Origin</td><td id="spec-origin"></td></tr>
+            <tr><td>Certification</td><td id="spec-cert"></td></tr>
+            <tr><td>Availability</td><td id="spec-instock"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="tab-reviews" class="tab-pane" role="tabpanel">
+      <div class="reviews-list" id="reviews-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Products -->
+<section class="featured-section section-padding" id="related-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">You Might Also <span class="gold-text">Like</span></h2>
+    <div class="divider" data-aos="fade-up"></div>
+    <p class="section-subtitle" data-aos="fade-up">More exceptional gems from the same category</p>
+    <div class="products-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<!-- Quick View Modal -->
+<div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close" onclick="document.getElementById('quick-view-modal').classList.remove('open')"><i class="fas fa-times"></i></button>
+    <div class="modal-body">
+      <div class="modal-img-side"><div class="modal-gem-shape"></div></div>
+      <div class="modal-info-side">
+        <div class="modal-category"></div>
+        <h2 class="modal-name"></h2>
+        <div class="modal-price"></div>
+        <div class="stars modal-rating" style="margin-bottom:14px;font-size:0.9rem"></div>
+        <p class="modal-desc"></p>
+        <div class="modal-specs">
+          <div class="spec-item"><span class="spec-label">Carat: </span><span class="spec-value modal-carat"></span></div>
+          <div class="spec-item"><span class="spec-label">Cut: </span><span class="spec-value modal-cut"></span></div>
+          <div class="spec-item"><span class="spec-label">Color: </span><span class="spec-value modal-color"></span></div>
+          <div class="spec-item"><span class="spec-label">Origin: </span><span class="spec-value modal-origin"></span></div>
+          <div class="spec-item" style="grid-column:1/-1"><span class="spec-label">Cert: </span><span class="spec-value modal-cert"></span></div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary modal-add-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          <a href="#" class="btn btn-outline modal-view-link">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a></div>
+        <p class="footer-desc">Purveyors of the world's finest certified gemstones since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Our Collection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=diamond">Diamonds</a></li>
+          <li><a href="shop.html?category=ruby">Rubies</a></li>
+          <li><a href="shop.html?category=emerald">Emeralds</a></li>
+          <li><a href="shop.html?category=sapphire">Sapphires</a></li>
+          <li><a href="shop.html?category=opal">Opals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (212) 555-0194</span></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><span>hello@ramjigems.com</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 <a href="index.html">RAMJI Gems</a>. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/product-detail.js"></script>
+<script>
+  // Sync description tab
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      var p = window.products && window.products.find(p => p.id === parseInt(new URLSearchParams(location.search).get('id')));
+      if (p) {
+        var el = document.getElementById('tab-desc-text');
+        if (el) el.textContent = p.description;
+        var nameBC = document.getElementById('product-name-breadcrumb');
+        if (nameBC) nameBC.textContent = p.name;
+        var specName = document.getElementById('spec-name');
+        if (specName) specName.textContent = p.name;
+        var specCat = document.getElementById('spec-category');
+        if (specCat) specCat.textContent = p.category.charAt(0).toUpperCase() + p.category.slice(1);
+      }
+    }, 100);
+  });
+  document.getElementById('quick-view-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+</script>
+</body>
+</html>

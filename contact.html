@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — RAMJI Gems</title>
+  <meta name="description" content="Get in touch with RAMJI Gems. We are here to answer your questions about our certified gemstone collection." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="shop.html" class="nav-icon-btn" aria-label="Search"><i class="fas fa-search"></i></a>
+      <a href="shop.html" class="nav-icon-btn" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <a href="cart.html" class="nav-icon-btn cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn" aria-label="Account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Cart</a>
+  <a href="login.html">Account</a>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Contact</span>
+    </nav>
+    <h1>Get in <span class="gold-text">Touch</span></h1>
+    <p>We would love to hear from you. Our team of gemologists is ready to help.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Form -->
+      <div class="contact-form-card" data-aos="fade-right">
+        <h2>Send Us a <span class="gold-text">Message</span></h2>
+        <p class="subtitle">Whether you have a question about a specific gemstone, need authentication advice, or want to discuss a bespoke commission — we are here to help.</p>
+        <form id="contact-form" novalidate>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="contact-name">Your Name <span style="color:#dc3545">*</span></label>
+              <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required autocomplete="name" />
+              <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address <span style="color:#dc3545">*</span></label>
+              <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required autocomplete="email" />
+              <div class="error-msg"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject <span style="color:#dc3545">*</span></label>
+            <select id="contact-subject" class="form-control" required>
+              <option value="">Select a subject...</option>
+              <option value="inquiry">General Inquiry</option>
+              <option value="order">Order Support</option>
+              <option value="authentication">Authentication Question</option>
+              <option value="commission">Bespoke Commission</option>
+              <option value="wholesale">Wholesale Inquiry</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="error-msg"></div>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message <span style="color:#dc3545">*</span></label>
+            <textarea id="contact-message" class="form-control" placeholder="Tell us how we can help you..." rows="6" required style="resize:vertical;min-height:140px"></textarea>
+            <div class="error-msg"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-side" data-aos="fade-left">
+        <p style="color:var(--gold);font-size:0.82rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px"><i class="fas fa-map-marker-alt"></i> &nbsp;Find Us</p>
+        <h2>Contact <span class="gold-text">Information</span></h2>
+        <p>Visit our showroom by appointment or reach us through any of the channels below. We respond to all inquiries within 24 hours.</p>
+
+        <div class="info-items">
+          <div class="info-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-content">
+              <h4>Our Showroom</h4>
+              <p>47 Gem District, 5th Avenue<br />New York, NY 10036, USA<br /><em style="font-size:0.8rem;color:var(--gold)">By appointment only</em></p>
+            </div>
+          </div>
+          <div class="info-item" data-aos="fade-up" data-aos-delay="80">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-content">
+              <h4>Phone</h4>
+              <p>+1 (212) 555-0194<br />+1 (212) 555-0195 (WhatsApp)</p>
+            </div>
+          </div>
+          <div class="info-item" data-aos="fade-up" data-aos-delay="160">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-content">
+              <h4>Email</h4>
+              <p>hello@ramjigems.com<br />orders@ramjigems.com</p>
+            </div>
+          </div>
+          <div class="info-item" data-aos="fade-up" data-aos-delay="240">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-content">
+              <h4>Business Hours</h4>
+              <p>Monday – Friday: 9:00 AM – 6:00 PM EST<br />Saturday: 10:00 AM – 4:00 PM EST<br />Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-placeholder" aria-label="Map placeholder" data-aos="fade-up">
+          <i class="fas fa-map-marked-alt"></i>
+          <span>47 Gem District, 5th Avenue, New York</span>
+          <small style="color:rgba(212,175,55,0.6);font-size:0.75rem">Interactive map available upon request</small>
+        </div>
+
+        <!-- Social -->
+        <div class="contact-social" data-aos="fade-up">
+          <h4>Follow Us</h4>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a></div>
+        <p class="footer-desc">Purveyors of the world's finest certified gemstones since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Our Collection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=diamond">Diamonds</a></li>
+          <li><a href="shop.html?category=ruby">Rubies</a></li>
+          <li><a href="shop.html?category=emerald">Emeralds</a></li>
+          <li><a href="shop.html?category=sapphire">Sapphires</a></li>
+          <li><a href="shop.html?category=opal">Opals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>47 Gem District, 5th Avenue, New York, NY 10036</span></div>
+          <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (212) 555-0194</span></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><span>hello@ramjigems.com</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 <a href="index.html">RAMJI Gems</a>. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var valid = true;
+      form.querySelectorAll('[required]').forEach(function (field) {
+        field.classList.remove('error');
+        var msg = field.parentNode.querySelector('.error-msg');
+        if (msg) msg.classList.remove('show');
+        if (!field.value.trim()) {
+          field.classList.add('error');
+          if (msg) { msg.textContent = 'This field is required.'; msg.classList.add('show'); }
+          valid = false;
+        }
+      });
+      var emailField = form.querySelector('#contact-email');
+      if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+        emailField.classList.add('error');
+        var msg = emailField.parentNode.querySelector('.error-msg');
+        if (msg) { msg.textContent = 'Please enter a valid email.'; msg.classList.add('show'); }
+        valid = false;
+      }
+      if (!valid) return;
+      showToast('Message sent! We will get back to you within 24 hours.', 'success');
+      form.reset();
+    });
+  });
+</script>
+</body>
+</html>

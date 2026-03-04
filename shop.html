@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — RAMJI Gems</title>
+  <meta name="description" content="Browse our full collection of certified gemstones. Filter by category, price, color and more." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RAMJI Gems Home">
+      <div class="logo-gem" aria-hidden="true"></div>
+      <span class="logo-text">RAMJI <span>Gems</span></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="shop.html" class="nav-icon-btn" title="Search" aria-label="Search"><i class="fas fa-search"></i></a>
+      <a href="shop.html" class="nav-icon-btn" title="Wishlist" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <a href="cart.html" class="nav-icon-btn cart-btn" title="Cart" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn" title="Account" aria-label="Account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<nav class="mobile-menu" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html"><i class="fas fa-shopping-bag"></i> Cart</a>
+  <a href="login.html"><i class="fas fa-user"></i> Account</a>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Shop</span>
+    </nav>
+    <h1>Our <span class="gold-text">Collection</span></h1>
+    <p>Explore 12 exceptional certified gemstones from the world's finest mines</p>
+  </div>
+</section>
+
+<!-- Shop Section -->
+<section class="shop-section">
+  <div class="container">
+
+    <!-- Category Buttons -->
+    <div class="category-filter-row" role="group" aria-label="Filter by category">
+      <button class="cat-btn active" data-cat="all">All Stones</button>
+      <button class="cat-btn" data-cat="diamond">Diamonds</button>
+      <button class="cat-btn" data-cat="ruby">Rubies</button>
+      <button class="cat-btn" data-cat="emerald">Emeralds</button>
+      <button class="cat-btn" data-cat="sapphire">Sapphires</button>
+      <button class="cat-btn" data-cat="amethyst">Amethysts</button>
+      <button class="cat-btn" data-cat="opal">Opals</button>
+      <button class="cat-btn" data-cat="topaz">Topaz</button>
+      <button class="cat-btn" data-cat="tourmaline">Tourmalines</button>
+    </div>
+
+    <!-- Advanced Filters -->
+    <div class="filter-bar">
+      <div class="filter-row">
+        <div class="filter-group">
+          <label for="min-price">Min Price ($)</label>
+          <input type="number" id="min-price" class="filter-input" placeholder="0" min="0" aria-label="Minimum price" />
+        </div>
+        <div class="filter-group">
+          <label for="max-price">Max Price ($)</label>
+          <input type="number" id="max-price" class="filter-input" placeholder="Any" min="0" aria-label="Maximum price" />
+        </div>
+        <div class="filter-divider" aria-hidden="true"></div>
+        <div class="filter-group">
+          <label for="color-filter">Color</label>
+          <input type="text" id="color-filter" class="filter-input" placeholder="e.g. Blue, Red..." aria-label="Filter by color" />
+        </div>
+        <div class="filter-group">
+          <label for="cut-filter">Cut</label>
+          <select id="cut-filter" class="filter-select" aria-label="Filter by cut">
+            <option value="">All Cuts</option>
+            <option value="Oval">Oval</option>
+            <option value="Round">Round</option>
+            <option value="Round Brilliant">Round Brilliant</option>
+            <option value="Emerald">Emerald Cut</option>
+            <option value="Cushion">Cushion</option>
+            <option value="Pear">Pear</option>
+            <option value="Princess">Princess</option>
+            <option value="Cabochon">Cabochon</option>
+            <option value="Octagon">Octagon</option>
+          </select>
+        </div>
+        <div class="filter-actions">
+          <button id="reset-filters" class="btn-filter-reset"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="shop-toolbar">
+      <p class="results-count" id="results-count">Loading...</p>
+      <div class="search-input-wrap">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="search" id="search-input" class="search-input" placeholder="Search gemstones..." aria-label="Search gemstones" />
+      </div>
+      <div class="filter-group">
+        <select id="sort-select" class="filter-select" aria-label="Sort products">
+          <option value="newest">Newest First</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name A–Z</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="products-grid">
+      <div class="no-products"><i class="fas fa-circle-notch fa-spin" style="font-size:2rem;color:var(--gold)"></i></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Quick View Modal -->
+<div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Quick view">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close modal" onclick="document.getElementById('quick-view-modal').classList.remove('open')"><i class="fas fa-times"></i></button>
+    <div class="modal-body">
+      <div class="modal-img-side">
+        <div class="modal-gem-shape"></div>
+      </div>
+      <div class="modal-info-side">
+        <div class="modal-category"></div>
+        <h2 class="modal-name"></h2>
+        <div class="modal-price"></div>
+        <div class="stars modal-rating" style="margin-bottom:14px;font-size:0.9rem"></div>
+        <p class="modal-desc"></p>
+        <div class="modal-specs">
+          <div class="spec-item"><span class="spec-label">Carat: </span><span class="spec-value modal-carat"></span></div>
+          <div class="spec-item"><span class="spec-label">Cut: </span><span class="spec-value modal-cut"></span></div>
+          <div class="spec-item"><span class="spec-label">Color: </span><span class="spec-value modal-color"></span></div>
+          <div class="spec-item"><span class="spec-label">Origin: </span><span class="spec-value modal-origin"></span></div>
+          <div class="spec-item" style="grid-column:1/-1"><span class="spec-label">Cert: </span><span class="spec-value modal-cert"></span></div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary modal-add-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          <a href="#" class="btn btn-outline modal-view-link">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a>
+        </div>
+        <p class="footer-desc">Purveyors of the world's finest certified gemstones since 2009. Every stone is hand-selected, ethically sourced, and authenticated by leading gemological laboratories.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Our Collection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=diamond">Diamonds</a></li>
+          <li><a href="shop.html?category=ruby">Rubies</a></li>
+          <li><a href="shop.html?category=emerald">Emeralds</a></li>
+          <li><a href="shop.html?category=sapphire">Sapphires</a></li>
+          <li><a href="shop.html?category=opal">Opals</a></li>
+          <li><a href="shop.html?category=tourmaline">Tourmalines</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>47 Gem District, 5th Avenue, New York, NY 10036</span></div>
+          <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (212) 555-0194</span></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><span>hello@ramjigems.com</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 <a href="index.html">RAMJI Gems</a>. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+<script>
+  // Close modal on overlay click
+  document.getElementById('quick-view-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+</script>
+</body>
+</html>

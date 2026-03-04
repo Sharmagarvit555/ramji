@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — RAMJI Gems</title>
+  <meta name="description" content="Complete your purchase of exceptional certified gemstones." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="nav-icon-btn cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn" aria-label="Account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="login.html">Account</a>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="cart.html">Cart</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Checkout</span>
+    </nav>
+    <h1>Secure <span class="gold-text">Checkout</span></h1>
+    <p>Complete your order with our safe, encrypted checkout</p>
+  </div>
+</section>
+
+<!-- Checkout Section -->
+<section class="checkout-section">
+  <div class="container">
+    <div class="checkout-grid">
+      <!-- Form Column -->
+      <div>
+        <form id="checkout-form" novalidate>
+          <!-- Shipping Info -->
+          <div class="form-card" data-aos="fade-right">
+            <h3><i class="fas fa-shipping-fast"></i> Shipping Information</h3>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="first-name">First Name <span style="color:#dc3545">*</span></label>
+                <input type="text" id="first-name" name="firstName" class="form-control" placeholder="John" required autocomplete="given-name" />
+                <div class="error-msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name <span style="color:#dc3545">*</span></label>
+                <input type="text" id="last-name" name="lastName" class="form-control" placeholder="Doe" required autocomplete="family-name" />
+                <div class="error-msg"></div>
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="email">Email Address <span style="color:#dc3545">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required autocomplete="email" />
+                <div class="error-msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">Street Address <span style="color:#dc3545">*</span></label>
+              <input type="text" id="address" name="address" class="form-control" placeholder="123 Main Street, Apt 4B" required autocomplete="street-address" />
+              <div class="error-msg"></div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="city">City <span style="color:#dc3545">*</span></label>
+                <input type="text" id="city" name="city" class="form-control" placeholder="New York" required autocomplete="address-level2" />
+                <div class="error-msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="state">State / Province <span style="color:#dc3545">*</span></label>
+                <input type="text" id="state" name="state" class="form-control" placeholder="NY" required autocomplete="address-level1" />
+                <div class="error-msg"></div>
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="zip">ZIP / Postal Code <span style="color:#dc3545">*</span></label>
+                <input type="text" id="zip" name="zip" class="form-control" placeholder="10036" required autocomplete="postal-code" />
+                <div class="error-msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="country">Country <span style="color:#dc3545">*</span></label>
+                <select id="country" name="country" class="form-control" required autocomplete="country">
+                  <option value="">Select country</option>
+                  <option value="US" selected>United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="AU">Australia</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="JP">Japan</option>
+                  <option value="IN">India</option>
+                  <option value="SG">Singapore</option>
+                  <option value="AE">UAE</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="error-msg"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment -->
+          <div class="form-card" data-aos="fade-right" data-aos-delay="100">
+            <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+            <div class="payment-options" role="radiogroup" aria-label="Payment method">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="card" />
+                <span class="payment-option-icon"><i class="fas fa-credit-card"></i></span>
+                <span class="payment-option-label">Credit / Debit Card</span>
+                <span style="font-size:1.4rem;margin-left:auto">
+                  <i class="fab fa-cc-visa" style="color:#1a1f71"></i>
+                  <i class="fab fa-cc-mastercard" style="color:#eb001b"></i>
+                  <i class="fab fa-cc-amex" style="color:#2557d6"></i>
+                </span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="paypal" />
+                <span class="payment-option-icon"><i class="fab fa-paypal"></i></span>
+                <span class="payment-option-label">PayPal</span>
+                <i class="fab fa-paypal" style="margin-left:auto;font-size:1.6rem;color:#003087"></i>
+              </label>
+            </div>
+
+            <!-- Credit Card Fields -->
+            <div class="cc-fields" id="cc-fields">
+              <div class="form-group">
+                <label for="card-number">Card Number <span style="color:#dc3545">*</span></label>
+                <input type="text" id="card-number" name="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
+                <div class="error-msg"></div>
+              </div>
+              <div class="form-group">
+                <label for="card-name">Cardholder Name <span style="color:#dc3545">*</span></label>
+                <input type="text" id="card-name" name="cardName" class="form-control" placeholder="John Doe" autocomplete="cc-name" />
+                <div class="error-msg"></div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="card-expiry">Expiry Date <span style="color:#dc3545">*</span></label>
+                  <input type="text" id="card-expiry" name="cardExpiry" class="form-control" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" />
+                  <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                  <label for="card-cvv">CVV <span style="color:#dc3545">*</span></label>
+                  <input type="text" id="card-cvv" name="cardCvv" class="form-control" placeholder="•••" maxlength="4" autocomplete="cc-csc" />
+                  <div class="error-msg"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PayPal Message -->
+            <div class="paypal-msg" id="paypal-msg">
+              <i class="fab fa-paypal" style="font-size:2rem;display:block;margin-bottom:8px"></i>
+              You will be redirected to PayPal to complete your payment securely after placing your order.
+            </div>
+          </div>
+
+          <!-- Summary Line (mobile) -->
+          <div class="form-card" data-aos="fade-right" data-aos-delay="150" style="display:none" id="mobile-summary-card">
+            <h3><i class="fas fa-receipt"></i> Summary</h3>
+            <div class="summary-line"><span class="label">Subtotal</span><span class="value" id="form-subtotal"></span></div>
+          </div>
+
+          <div data-aos="fade-right" data-aos-delay="200">
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem">
+              <i class="fas fa-lock"></i> Place Order
+            </button>
+            <p style="text-align:center;margin-top:12px;font-size:0.78rem;color:var(--text-muted)">
+              <i class="fas fa-shield-alt" style="color:var(--gold)"></i> 256-bit SSL encryption. Your data is safe.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div>
+        <div class="order-summary-card" data-aos="fade-left">
+          <h3>Order Summary</h3>
+          <div id="order-items-list"></div>
+          <hr style="border-color:var(--border-color);margin:16px 0" />
+          <div class="summary-line"><span class="label">Subtotal</span><span class="value" id="order-subtotal">$0</span></div>
+          <div class="summary-line"><span class="label">Shipping</span><span class="value" id="order-shipping">—</span></div>
+          <div class="summary-line"><span class="label">Tax (8%)</span><span class="value" id="order-tax">—</span></div>
+          <div class="summary-total">
+            <span class="label">Total</span>
+            <span class="value" id="order-total">$0</span>
+          </div>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:0.82rem;color:var(--text-muted)">
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-certificate" style="color:var(--gold)"></i> All gemstones include original certificates</div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-box" style="color:var(--gold)"></i> Luxury packaging included</div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-undo" style="color:var(--gold)"></i> 30-day hassle-free returns</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Order Success Modal -->
+<div id="success-modal" class="modal-overlay success-modal" role="dialog" aria-modal="true" aria-label="Order placed successfully">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close" onclick="document.getElementById('success-modal').classList.remove('open');window.location.href='index.html'"><i class="fas fa-times"></i></button>
+    <div class="success-icon" aria-hidden="true"><i class="fas fa-check"></i></div>
+    <h2>Order <span class="gold-text">Confirmed!</span></h2>
+    <p style="color:var(--text-muted)">Thank you for your purchase. Your order has been placed successfully.</p>
+    <p class="order-number">Order #<span id="order-number"></span></p>
+    <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:28px">A confirmation email will be sent to your inbox shortly. Your certified gemstone will be packaged with care and shipped within 2-3 business days.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="shop.html" class="btn btn-outline"><i class="fas fa-gem"></i> Continue Shopping</a>
+      <a href="index.html" class="btn btn-primary"><i class="fas fa-home"></i> Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a></div>
+        <p class="footer-desc">Purveyors of the world's finest certified gemstones since 2009.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (212) 555-0194</span></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><span>hello@ramjigems.com</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 <a href="index.html">RAMJI Gems</a>. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

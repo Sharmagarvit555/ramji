@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Register — RAMJI Gems</title>
+  <meta name="description" content="Sign in or create your RAMJI Gems account to manage orders and wishlist." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="nav-icon-btn cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn active" aria-label="Account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<!-- Auth Section -->
+<section class="auth-section">
+  <div class="auth-card" data-aos="zoom-in">
+    <div class="auth-logo">
+      <a href="index.html" class="nav-logo" style="justify-content:center">
+        <div class="logo-gem"></div>
+        <span class="logo-text">RAMJI <span>Gems</span></span>
+      </a>
+    </div>
+
+    <!-- Tabs -->
+    <div class="auth-tabs" role="tablist">
+      <button class="auth-tab active" data-tab="login" role="tab" aria-selected="true">Sign In</button>
+      <button class="auth-tab" data-tab="register" role="tab" aria-selected="false">Create Account</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="form-login" class="auth-form active" role="tabpanel">
+      <h2>Welcome <span class="gold-text">Back</span></h2>
+      <p class="subtitle">Sign in to access your account and wishlist</p>
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" class="form-control" placeholder="your@email.com" required autocomplete="email" />
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="login-password" class="form-control" placeholder="Your password" required autocomplete="current-password" />
+            <button type="button" class="password-toggle" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+          </div>
+          <div class="error-msg"></div>
+        </div>
+        <div class="auth-row">
+          <label class="remember-row">
+            <input type="checkbox" id="remember-me" />
+            Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px">
+          <i class="fas fa-sign-in-alt"></i> Sign In
+        </button>
+      </form>
+
+      <div class="auth-divider"><span>or continue with</span></div>
+      <div class="social-auth">
+        <button class="social-btn" type="button" aria-label="Continue with Google">
+          <i class="fab fa-google" style="color:#ea4335"></i> Google
+        </button>
+        <button class="social-btn" type="button" aria-label="Continue with Facebook">
+          <i class="fab fa-facebook-f" style="color:#1877f2"></i> Facebook
+        </button>
+      </div>
+      <p class="auth-switch">Don't have an account? <a href="#" data-switch-tab="register">Create one now</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="form-register" class="auth-form" role="tabpanel">
+      <h2>Create <span class="gold-text">Account</span></h2>
+      <p class="subtitle">Join our community of gemstone enthusiasts</p>
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" class="form-control" placeholder="John Doe" required autocomplete="name" />
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" class="form-control" placeholder="your@email.com" required autocomplete="email" />
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="reg-password" class="form-control" placeholder="Min. 6 characters" required autocomplete="new-password" />
+            <button type="button" class="password-toggle" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+          </div>
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="reg-confirm-password">Confirm Password</label>
+          <div class="password-wrap">
+            <input type="password" id="reg-confirm-password" class="form-control" placeholder="Repeat your password" required autocomplete="new-password" />
+            <button type="button" class="password-toggle" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+          </div>
+          <div class="error-msg"></div>
+        </div>
+        <div class="terms-row">
+          <input type="checkbox" id="terms-checkbox" required />
+          <label for="terms-checkbox">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px">
+          <i class="fas fa-user-plus"></i> Create Account
+        </button>
+      </form>
+
+      <div class="auth-divider"><span>or continue with</span></div>
+      <div class="social-auth">
+        <button class="social-btn" type="button" aria-label="Continue with Google">
+          <i class="fab fa-google" style="color:#ea4335"></i> Google
+        </button>
+        <button class="social-btn" type="button" aria-label="Continue with Facebook">
+          <i class="fab fa-facebook-f" style="color:#1877f2"></i> Facebook
+        </button>
+      </div>
+      <p class="auth-switch">Already have an account? <a href="#" data-switch-tab="login">Sign in here</a></p>
+    </div>
+  </div>
+</section>
+
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
