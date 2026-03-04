@@ -27,7 +27,7 @@
 
   function renderProduct() {
     var p = currentProduct;
-    document.title = p.name + ' — RAMJI Gems';
+    document.title = p.name + ' — Ganapati Gems';
     setEl('product-category-label', p.category.toUpperCase());
     setEl('product-name', p.name);
     setEl('product-price', '$' + p.price.toLocaleString());

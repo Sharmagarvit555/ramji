@@ -117,12 +117,12 @@ function initAOS() {
 
 // --- Wishlist ---
 function getWishlist() {
-  try { return JSON.parse(localStorage.getItem('ramji_wishlist')) || []; }
+  try { return JSON.parse(localStorage.getItem('ganapati_wishlist')) || []; }
   catch (e) { return []; }
 }
 
 function saveWishlist(list) {
-  localStorage.setItem('ramji_wishlist', JSON.stringify(list));
+  localStorage.setItem('ganapati_wishlist', JSON.stringify(list));
 }
 
 function toggleWishlist(productId) {

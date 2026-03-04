@@ -1,8 +1,8 @@
 /* js/auth.js - Authentication Logic */
 
 (function () {
-  var SESSION_KEY = 'ramji_session';
-  var USERS_KEY = 'ramji_users';
+  var SESSION_KEY = 'ganapati_session';
+  var USERS_KEY = 'ganapati_users';
 
   function init() {
     bindTabs();

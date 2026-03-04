@@ -1,7 +1,7 @@
 /* js/cart.js - Cart Module */
 
 window.Cart = (function () {
-  const STORAGE_KEY = 'ramji_cart';
+  const STORAGE_KEY = 'ganapati_cart';
 
   function getItems() {
     try {
