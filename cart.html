@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart — RAMJI Gems</title>
+  <meta name="description" content="Review the items in your cart and proceed to checkout." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="shop.html" class="nav-icon-btn" aria-label="Search"><i class="fas fa-search"></i></a>
+      <a href="shop.html" class="nav-icon-btn" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <a href="cart.html" class="nav-icon-btn cart-btn active" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn" aria-label="Account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html"><i class="fas fa-shopping-bag"></i> Cart</a>
+  <a href="login.html"><i class="fas fa-user"></i> Account</a>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Shopping Cart</span>
+    </nav>
+    <h1>Shopping <span class="gold-text">Cart</span></h1>
+    <p>Review your selected gemstones before checkout</p>
+  </div>
+</section>
+
+<!-- Cart Section -->
+<section class="cart-section">
+  <div class="container" id="cart-container">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><a href="index.html" class="nav-logo"><div class="logo-gem"></div><span class="logo-text">RAMJI <span>Gems</span></span></a></div>
+        <p class="footer-desc">Purveyors of the world's finest certified gemstones since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Our Collection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=diamond">Diamonds</a></li>
+          <li><a href="shop.html?category=ruby">Rubies</a></li>
+          <li><a href="shop.html?category=emerald">Emeralds</a></li>
+          <li><a href="shop.html?category=sapphire">Sapphires</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (212) 555-0194</span></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><span>hello@ramjigems.com</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 <a href="index.html">RAMJI Gems</a>. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function renderCart() {
+    var items = Cart.getItems();
+    var container = document.getElementById('cart-container');
+    if (!container) return;
+
+    if (!items.length) {
+      container.innerHTML = `
+        <div class="cart-empty-state" data-aos="fade-up">
+          <i class="fas fa-shopping-bag"></i>
+          <h3>Your cart is empty</h3>
+          <p>Discover our exceptional collection of certified gemstones</p>
+          <a href="shop.html" class="btn btn-primary"><i class="fas fa-gem"></i> Browse Collection</a>
+        </div>`;
+      return;
+    }
+
+    var subtotal = Cart.getTotal();
+    var shipping = subtotal > 500 ? 0 : 25;
+    var tax = Math.round(subtotal * 0.08 * 100) / 100;
+    var total = subtotal + shipping + tax;
+
+    container.innerHTML = `
+      <div class="cart-grid">
+        <div>
+          <div class="cart-table-wrap" data-aos="fade-right">
+            <table class="cart-table" aria-label="Cart items">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cart-tbody">${items.map(item => buildCartRow(item)).join('')}</tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:20px;flex-wrap:wrap;gap:12px">
+            <a href="shop.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            <button class="btn-danger" onclick="clearCartAndRender()"><i class="fas fa-trash-alt"></i> Clear Cart</button>
+          </div>
+        </div>
+        <div class="cart-summary-card" data-aos="fade-left">
+          <h3><i class="fas fa-receipt" style="color:var(--gold)"></i> Order Summary</h3>
+          <div class="summary-line"><span class="label">Subtotal (${Cart.getCount()} items)</span><span class="value">$${subtotal.toLocaleString()}</span></div>
+          <div class="summary-line"><span class="label">Shipping</span><span class="value">${shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2)}</span></div>
+          <div class="summary-line"><span class="label">Tax (8%)</span><span class="value">$${tax.toFixed(2)}</span></div>
+          ${subtotal > 0 && subtotal <= 500 ? '<p class="shipping-note"><i class="fas fa-truck"></i> Add $' + (500 - subtotal).toFixed(2) + ' more for free shipping!</p>' : (shipping === 0 ? '<p class="shipping-note"><i class="fas fa-truck"></i> You qualify for free shipping!</p>' : '')}
+          <div class="summary-total">
+            <span class="label">Total</span>
+            <span class="value">$${total.toLocaleString()}</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px">
+            <i class="fas fa-lock"></i> Proceed to Checkout
+          </a>
+          <p style="text-align:center;margin-top:14px;font-size:0.78rem;color:var(--text-muted)">
+            <i class="fas fa-shield-alt" style="color:var(--gold)"></i> Secure SSL encrypted checkout
+          </p>
+        </div>
+      </div>`;
+
+    // Bind quantity change and remove events
+    document.querySelectorAll('.cart-qty-input').forEach(input => {
+      input.addEventListener('change', function() {
+        Cart.updateQuantity(parseInt(this.dataset.id), parseInt(this.value));
+        renderCart();
+      });
+    });
+    document.querySelectorAll('.cart-qty-minus').forEach(btn => {
+      btn.addEventListener('click', function() {
+        var id = parseInt(this.dataset.id);
+        var item = Cart.getItems().find(i => i.id === id);
+        if (item) { Cart.updateQuantity(id, item.quantity - 1); renderCart(); }
+      });
+    });
+    document.querySelectorAll('.cart-qty-plus').forEach(btn => {
+      btn.addEventListener('click', function() {
+        var id = parseInt(this.dataset.id);
+        var item = Cart.getItems().find(i => i.id === id);
+        if (item) { Cart.updateQuantity(id, item.quantity + 1); renderCart(); }
+      });
+    });
+    document.querySelectorAll('.cart-remove-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        Cart.removeItem(parseInt(this.dataset.id));
+        showToast('Item removed from cart', 'info');
+        renderCart();
+      });
+    });
+    initAOS();
+  }
+
+  function buildCartRow(item) {
+    return `<tr>
+      <td>
+        <div class="cart-item-cell">
+          <div class="cart-item-img" style="background:${item.image}">
+            <div class="cart-gem" style="background:${item.image}"></div>
+          </div>
+          <div>
+            <div class="cart-item-name"><a href="product.html?id=${item.id}" style="color:inherit">${item.name}</a></div>
+            <div class="cart-item-desc">${item.carat}ct · ${item.cut} Cut</div>
+          </div>
+        </div>
+      </td>
+      <td class="cart-price">$${item.price.toLocaleString()}</td>
+      <td>
+        <div class="qty-selector">
+          <button class="qty-btn cart-qty-minus" data-id="${item.id}" aria-label="Decrease"><i class="fas fa-minus"></i></button>
+          <input type="number" class="qty-input cart-qty-input" value="${item.quantity}" min="1" max="10" data-id="${item.id}" aria-label="Quantity" style="width:44px" />
+          <button class="qty-btn cart-qty-plus" data-id="${item.id}" aria-label="Increase"><i class="fas fa-plus"></i></button>
+        </div>
+      </td>
+      <td class="cart-subtotal">$${(item.price * item.quantity).toLocaleString()}</td>
+      <td><button class="btn-danger cart-remove-btn" data-id="${item.id}" aria-label="Remove item"><i class="fas fa-times"></i></button></td>
+    </tr>`;
+  }
+
+  function clearCartAndRender() {
+    if (confirm('Clear all items from your cart?')) {
+      Cart.clear();
+      showToast('Cart cleared', 'info');
+      renderCart();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAMJI Gems — Discover the World's Finest Gemstones</title>
+  <meta name="description" content="Explore our curated collection of rare and exceptional gemstones — sapphires, emeralds, rubies, diamonds and more. Certified, ethically sourced, exquisitely beautiful." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader"><div class="loader-gem"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RAMJI Gems Home">
+      <div class="logo-gem" aria-hidden="true"></div>
+      <span class="logo-text">RAMJI <span>Gems</span></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="shop.html" class="nav-icon-btn" title="Search" aria-label="Search gemstones"><i class="fas fa-search"></i></a>
+      <a href="shop.html" class="nav-icon-btn" title="Wishlist" aria-label="View wishlist"><i class="far fa-heart"></i></a>
+      <a href="cart.html" class="nav-icon-btn cart-btn" title="Shopping Cart" aria-label="View cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" aria-live="polite"></span>
+      </a>
+      <a href="login.html" class="nav-icon-btn user-btn" title="Login / Register" aria-label="User account"><i class="fas fa-user"></i></a>
+    </div>
+    <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html"><i class="fas fa-shopping-bag"></i> Cart</a>
+  <a href="login.html"><i class="fas fa-user"></i> Account</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" aria-label="Hero">
+  <div class="sparkles" aria-hidden="true" id="sparkles-container"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up">
+        <i class="fas fa-gem"></i> Certified &amp; Ethically Sourced
+      </div>
+      <h1 data-aos="fade-up" data-aos-delay="100">
+        Discover the World's <span class="highlight">Finest Gemstones</span>
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Each gemstone in our collection is hand-selected by master gemologists, certified for authenticity, and sourced from the world's most renowned mines. From Kashmir sapphires to Paraiba tourmalines — rarity, beauty, and craftsmanship in every stone.
+      </p>
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+        <a href="shop.html" class="btn btn-primary"><i class="fas fa-gem"></i> Shop Now</a>
+        <a href="about.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-gems-visual" aria-hidden="true">
+    <div class="floating-gem" style="--dur:7s;--delay:0s;--rot:15deg;width:180px;height:180px;background:radial-gradient(circle at 35% 30%,#1a6fc4,#0d4a8c,#071e3d);top:30%;left:30%;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%)"></div>
+    <div class="floating-gem" style="--dur:5s;--delay:1s;--rot:-10deg;width:120px;height:120px;background:radial-gradient(circle at 35% 30%,#e74c3c,#c0392b,#7b241c);top:10%;left:55%;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%)"></div>
+    <div class="floating-gem" style="--dur:8s;--delay:2s;--rot:25deg;width:90px;height:90px;background:radial-gradient(circle at 35% 30%,#27ae60,#1e8449,#0d3b22);top:60%;left:60%;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%)"></div>
+    <div class="floating-gem" style="--dur:6s;--delay:0.5s;--rot:-20deg;width:70px;height:70px;background:radial-gradient(circle at 35% 30%,#9b59b6,#6c3483,#4a235a);top:70%;left:20%;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%)"></div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured-section section-padding" id="featured">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Featured <span class="gold-text">Gemstones</span></h2>
+    <div class="divider" data-aos="fade-up"></div>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Handpicked masterpieces from our most exclusive collection</p>
+    <div class="products-grid" id="featured-grid"></div>
+    <div style="text-align:center;margin-top:40px" data-aos="fade-up">
+      <a href="shop.html" class="btn btn-outline"><i class="fas fa-th-large"></i> View Full Collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- Quick View Modal (shared) -->
+<div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Quick view">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close modal" onclick="document.getElementById('quick-view-modal').classList.remove('open')"><i class="fas fa-times"></i></button>
+    <div class="modal-body">
+      <div class="modal-img-side">
+        <div class="modal-gem-shape"></div>
+      </div>
+      <div class="modal-info-side">
+        <div class="modal-category"></div>
+        <h2 class="modal-name"></h2>
+        <div class="modal-price"></div>
+        <div class="stars modal-rating" style="margin-bottom:14px;font-size:0.9rem"></div>
+        <p class="modal-desc"></p>
+        <div class="modal-specs">
+          <div class="spec-item"><span class="spec-label">Carat: </span><span class="spec-value modal-carat"></span></div>
+          <div class="spec-item"><span class="spec-label">Cut: </span><span class="spec-value modal-cut"></span></div>
+          <div class="spec-item"><span class="spec-label">Color: </span><span class="spec-value modal-color"></span></div>
+          <div class="spec-item"><span class="spec-label">Origin: </span><span class="spec-value modal-origin"></span></div>
+          <div class="spec-item" style="grid-column:1/-1"><span class="spec-label">Cert: </span><span class="spec-value modal-cert"></span></div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary modal-add-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          <a href="#" class="btn btn-outline modal-view-link">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Categories -->
+<section class="categories-section section-padding">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Shop by <span class="gold-text">Category</span></h2>
+    <div class="divider" data-aos="fade-up"></div>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Explore our curated selection of the world's most precious stones</p>
+    <div class="categories-grid">
+      <a href="shop.html?category=diamond" class="category-card" style="background:linear-gradient(135deg,#2c3e50,#1a252f)" data-aos="zoom-in" data-aos-delay="0">
+        <div class="category-icon" style="background:radial-gradient(circle,#f8f9fa,#adb5bd)"></div>
+        <span class="category-name">Diamonds</span>
+        <span class="category-count">1 Stone</span>
+      </a>
+      <a href="shop.html?category=ruby" class="category-card" style="background:linear-gradient(135deg,#4a1010,#7b1a1a)" data-aos="zoom-in" data-aos-delay="50">
+        <div class="category-icon" style="background:radial-gradient(circle,#e74c3c,#7b241c)"></div>
+        <span class="category-name">Rubies</span>
+        <span class="category-count">2 Stones</span>
+      </a>
+      <a href="shop.html?category=emerald" class="category-card" style="background:linear-gradient(135deg,#0d3b22,#1e8449)" data-aos="zoom-in" data-aos-delay="100">
+        <div class="category-icon" style="background:radial-gradient(circle,#27ae60,#0d3b22)"></div>
+        <span class="category-name">Emeralds</span>
+        <span class="category-count">2 Stones</span>
+      </a>
+      <a href="shop.html?category=sapphire" class="category-card" style="background:linear-gradient(135deg,#071e3d,#1a5276)" data-aos="zoom-in" data-aos-delay="150">
+        <div class="category-icon" style="background:radial-gradient(circle,#2980b9,#071e3d)"></div>
+        <span class="category-name">Sapphires</span>
+        <span class="category-count">2 Stones</span>
+      </a>
+      <a href="shop.html?category=amethyst" class="category-card" style="background:linear-gradient(135deg,#2d1b69,#6c3483)" data-aos="zoom-in" data-aos-delay="200">
+        <div class="category-icon" style="background:radial-gradient(circle,#9b59b6,#4a235a)"></div>
+        <span class="category-name">Amethysts</span>
+        <span class="category-count">1 Stone</span>
+      </a>
+      <a href="shop.html?category=opal" class="category-card" style="background:linear-gradient(135deg,#0f3460,#16213e)" data-aos="zoom-in" data-aos-delay="250">
+        <div class="category-icon" style="background:radial-gradient(circle,#2c3e50,#0d1b2a)"></div>
+        <span class="category-name">Opals</span>
+        <span class="category-count">1 Stone</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section section-padding">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">What Our <span class="gold-text">Clients Say</span></h2>
+    <div class="divider" data-aos="fade-up"></div>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Trusted by gemstone collectors and jewelry lovers worldwide</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+        <p class="testimonial-text">The Royal Blue Sapphire I purchased exceeded every expectation. The color is absolutely breathtaking, and the GIA certification gave me complete confidence in its quality. RAMJI Gems is the gold standard.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#1a6fc4,#0d4a8c)">A</div>
+          <div>
+            <div class="author-name">Alexandra Chen</div>
+            <div class="author-location"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:0.7rem"></i> New York, USA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <p class="testimonial-text">I have been collecting fine gemstones for over 20 years and RAMJI Gems consistently delivers the finest quality. Their Colombian Emerald was a once-in-a-lifetime find. Exceptional provenance and documentation.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#27ae60,#1e8449)">M</div>
+          <div>
+            <div class="author-name">Marcus Whitfield</div>
+            <div class="author-location"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:0.7rem"></i> London, UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <p class="testimonial-text">Purchased a Paraiba Tourmaline as an anniversary gift — my wife was speechless. The neon color is unlike anything I have ever seen. The packaging was exquisite and delivery was prompt and secure.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#00acc1,#006064)">R</div>
+          <div>
+            <div class="author-name">Rafael Monteiro</div>
+            <div class="author-location"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:0.7rem"></i> São Paulo, Brazil</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section section-padding">
+  <div class="container">
+    <div class="newsletter-inner">
+      <h2 data-aos="fade-up">Stay <span class="gold-text">Informed</span></h2>
+      <p style="color:var(--text-muted)" data-aos="fade-up" data-aos-delay="100">Subscribe to our newsletter for exclusive collections, gemology insights, and early access to rare finds.</p>
+      <form class="newsletter-form" data-aos="fade-up" data-aos-delay="200" onsubmit="handleNewsletterSubmit(event)">
+        <input type="email" placeholder="Enter your email address" required aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <a href="index.html" class="nav-logo" aria-label="RAMJI Gems">
+            <div class="logo-gem" aria-hidden="true"></div>
+            <span class="logo-text">RAMJI <span>Gems</span></span>
+          </a>
+        </div>
+        <p class="footer-desc">Purveyors of the world's finest certified gemstones since 2009. Every stone is hand-selected, ethically sourced, and authenticated by leading gemological laboratories.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Our Collection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Shopping Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="shop.html?category=diamond">Diamonds</a></li>
+          <li><a href="shop.html?category=ruby">Rubies</a></li>
+          <li><a href="shop.html?category=emerald">Emeralds</a></li>
+          <li><a href="shop.html?category=sapphire">Sapphires</a></li>
+          <li><a href="shop.html?category=opal">Opals</a></li>
+          <li><a href="shop.html?category=tourmaline">Tourmalines</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>47 Gem District, 5th Avenue<br />New York, NY 10036, USA</span></div>
+          <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (212) 555-0194</span></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><span>hello@ramjigems.com</span></div>
+          <div class="contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 9AM – 6PM EST<br />Sat: 10AM – 4PM EST</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 <a href="index.html">RAMJI Gems</a>. All rights reserved. | Certified Gemstones &amp; Jewelry | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Toast Container -->
+<div id="toast-container" aria-live="polite"></div>
+
+<script>
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  showToast('Thank you for subscribing!', 'success');
+  e.target.reset();
+}
+
+// Sparkle generator
+(function() {
+  var container = document.getElementById('sparkles-container');
+  if (!container) return;
+  for (var i = 0; i < 18; i++) {
+    var s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.cssText = `left:${Math.random()*100}%;--dur:${3+Math.random()*5}s;--delay:${Math.random()*6}s;`;
+    container.appendChild(s);
+  }
+})();
+</script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
