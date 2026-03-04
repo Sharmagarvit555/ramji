@@ -125,7 +125,7 @@
     var minPrice = document.getElementById('min-price');
     var maxPrice = document.getElementById('max-price');
     if (minPrice) minPrice.addEventListener('input', debounce(function () { currentFilters.minPrice = this.value; renderProducts(); updateURL(); }, 400));
-    if (maxPrice) maxPrice.addEventListener('change', debounce(function () { currentFilters.maxPrice = this.value; renderProducts(); updateURL(); }, 400));
+    if (maxPrice) maxPrice.addEventListener('input', debounce(function () { currentFilters.maxPrice = this.value; renderProducts(); updateURL(); }, 400));
 
     var colorFilter = document.getElementById('color-filter');
     if (colorFilter) colorFilter.addEventListener('change', function () { currentFilters.color = this.value; renderProducts(); updateURL(); });
