@@ -14,6 +14,7 @@ window.addEventListener('load', function () {
   initAOS();
   initWishlistIcons();
   highlightActiveNav();
+  updateNavbarUserState();
   if (typeof renderFeaturedProducts === 'function') renderFeaturedProducts();
 });
 
@@ -174,6 +175,38 @@ function highlightActiveNav() {
       link.classList.add('active');
     }
   });
+}
+
+// --- Navbar User State (reflects login/logout on all pages) ---
+function updateNavbarUserState() {
+  var SESSION_KEY = 'ramji_session';
+  var session = null;
+  try {
+    var sessionData = sessionStorage.getItem(SESSION_KEY) || localStorage.getItem(SESSION_KEY);
+    if (sessionData) session = JSON.parse(sessionData);
+  } catch (e) {}
+  var userBtn = document.querySelector('.user-btn');
+  if (!userBtn) return;
+  if (session && session.name) {
+    userBtn.title = 'Logged in as ' + session.name;
+    userBtn.innerHTML = '<i class="fas fa-user-check"></i>';
+    userBtn.removeAttribute('href');
+    userBtn.style.cursor = 'pointer';
+    userBtn.onclick = function (e) {
+      e.preventDefault();
+      if (confirm('Log out of your account?')) {
+        sessionStorage.removeItem(SESSION_KEY);
+        localStorage.removeItem(SESSION_KEY);
+        showToast('You have been logged out.', 'info');
+        setTimeout(function () { window.location.href = 'index.html'; }, 1000);
+      }
+    };
+  } else {
+    userBtn.title = 'Login / Register';
+    userBtn.setAttribute('href', 'login.html');
+    userBtn.innerHTML = '<i class="fas fa-user"></i>';
+    userBtn.onclick = null;
+  }
 }
 
 // --- Featured Products on Home Page ---

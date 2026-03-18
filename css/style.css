@@ -1316,6 +1316,7 @@ ul { list-style: none; }
 .auth-form .subtitle { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 24px; }
 
 .password-wrap { position: relative; }
+.password-wrap .form-control { padding-right: 44px; }
 .password-toggle {
   position: absolute; right: 12px; top: 50%;
   transform: translateY(-50%);

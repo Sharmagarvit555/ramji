@@ -5,6 +5,7 @@
   var USERS_KEY = 'ramji_users';
 
   function init() {
+    if (redirectIfLoggedIn()) return;
     bindTabs();
     bindPasswordToggles();
     bindLoginForm();
@@ -12,13 +13,26 @@
     updateNavbarUser();
   }
 
+  function redirectIfLoggedIn() {
+    if (getSession()) {
+      window.location.href = 'index.html';
+      return true;
+    }
+    return false;
+  }
+
   function bindTabs() {
     var tabs = document.querySelectorAll('.auth-tab');
     tabs.forEach(tab => {
       tab.addEventListener('click', function () {
-        tabs.forEach(t => t.classList.remove('active'));
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
         this.classList.add('active');
-        document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+        this.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('.auth-form').forEach(f => {
+          f.classList.remove('active');
+          var form = f.querySelector('form');
+          if (form) clearErrors(form);
+        });
         var target = document.getElementById('form-' + this.dataset.tab);
         if (target) target.classList.add('active');
       });
@@ -123,23 +137,16 @@
   };
 
   function updateNavbarUser() {
-    var session = getSession();
-    var userBtn = document.querySelector('.user-btn');
-    if (!userBtn) return;
-    if (session) {
-      userBtn.title = 'Logged in as ' + session.name;
-      userBtn.innerHTML = `<i class="fas fa-user-check"></i>`;
-      userBtn.onclick = function (e) { e.preventDefault(); if (confirm('Log out of your account?')) logoutUser(); };
-    } else {
-      userBtn.title = 'Login / Register';
-      userBtn.href = 'login.html';
+    if (typeof updateNavbarUserState === 'function') {
+      updateNavbarUserState();
     }
   }
 
   function showFieldError(field, message) {
     field.classList.add('error');
-    var msg = field.parentNode.querySelector('.error-msg');
-    if (!msg) { msg = document.createElement('div'); msg.className = 'error-msg'; field.parentNode.appendChild(msg); }
+    var group = field.closest('.form-group') || field.parentNode;
+    var msg = group.querySelector('.error-msg');
+    if (!msg) { msg = document.createElement('div'); msg.className = 'error-msg'; group.appendChild(msg); }
     msg.textContent = message;
     msg.classList.add('show');
   }
