@@ -1,4 +1,4 @@
-# Ramji - Gemstone E-Commerce Website
+# Ganapati - Gemstone E-Commerce Website
 
 A luxurious e-commerce website for premium gemstones.
 
